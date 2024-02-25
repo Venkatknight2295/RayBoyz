@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy", sans-serif;
+}
+body {
+    width: 100%;
+    background-color: #151515;
+   
+  }
+
+#nav {
+    padding: 3.2vw 5.2vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+#nav-part1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2.7vw;
+    position: fixed;
+    z-index: 9999;
+    top: 6%;
+    left: 5%;
+    color: #fff;
+    
+}
+
+
+#nav-part2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 2.3vw;
+    color: #fff;
+}
+#footer {
+    
+    min-height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    padding-left: 28vw;
+    padding-right: 6vw;
+    position: relative;
+}
+
+#footer h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    /* border-bottom: 0.1vw solid #ffffffb3; */
+    color: #fff;
+}
+
+
+#footer h1 i {
+    -webkit-text-stroke: 0.1vw #ffffffbe;
+    color: transparent;
+    font-weight: 500;
+    margin-left: 1vw;
+
+
+}
+
+#footer-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15vw;
+    margin-top: 13vh;
+
+}
+
+#footer-div .box h5 {
+    font-size: 1.1vw;
+    font-weight: 500;
+    margin-bottom: 3vh;
+    color: #fff;
+}
+
+#footer-div .box h4 {
+    font-size: 1.6vw;
+    font-weight: 500;
+    color: #fff;
+
+}
+
+#footer-div .box #mail {
+    font-size: 1.6vw;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #fff;
+}
+
+#footer #footerH3 {
+    margin-top: 6vh;
+    font-weight: 500;
+    color: #fff;
+}
+
+
