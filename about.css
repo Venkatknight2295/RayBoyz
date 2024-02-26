@@ -463,6 +463,13 @@ animation-timing-function: linear;
 
 }
 
-
+@media (max-width: 400px){
+    #footer{
+        margin-top: 6vw;
+    }
+    #marque{
+        margin-top: 47vh;
+    }
+}
 
 
