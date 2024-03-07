@@ -1,4 +1,5 @@
 document.body.style.cursor = "none";
+document.querySelector("video").playbackRate = 5.4;
 
 
 // Locomotive 
