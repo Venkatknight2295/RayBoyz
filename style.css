@@ -791,6 +791,7 @@ body {
     height: 85vh;
     -o-object-fit: cover;
     object-fit: cover;
+    filter: grayscale(100%);
 }
 
 #para-holder {
