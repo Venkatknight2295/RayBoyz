@@ -172,7 +172,10 @@ body {
   padding-top: 20px;
   flex-wrap: wrap;
 }
-
+.pro:hover{
+  transform: scale(1.07);
+  transition: 0.5s;
+}
 #product1 .pro {
   width: 23%;
   min-width: 250px;
