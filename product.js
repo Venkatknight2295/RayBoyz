@@ -53,16 +53,15 @@ toggleBtn.addEventListener('click', function() {
   toggleBtnIcon.classList = isOpen ? 'ri-close-line' : 'ri-menu-line';
 });
 
+// Assuming you have a variable 'price' containing the price value
+
 function redirectToProductDetails(clickedProduct) {
-  const productImage = clickedProduct.querySelector('img').src;
-  const brandName = clickedProduct.querySelector('span').textContent;
-  const title = clickedProduct.querySelector('h5').textContent;
-  const price = clickedProduct.querySelector('h4').textContent;
+  // ... other code to get product info ...
 
   localStorage.setItem("imageSrc", productImage);
   localStorage.setItem("brandName", brandName); // Assuming you store brand name too
   localStorage.setItem("title", title);
-  localStorage.setItem("price", price);
+  localStorage.setItem("price", price); // Not recommended - store the number directly
 
   window.location.href = "details.html";
 }

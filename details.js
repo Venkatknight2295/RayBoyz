@@ -1,49 +1,48 @@
-const buttons = document.querySelectorAll("button");
-
-function changeButtonColor(e) {
-  buttons.forEach(button => button.style.backgroundColor = null);
-  e.target.style.backgroundColor = "#0e0a44";
-}
-
-buttons.forEach(button => button.addEventListener("click", changeButtonColor));
-
 window.onload = function() {
-  const imageSrc = localStorage.getItem("imageSrc");
-  const brandName = localStorage.getItem("brandName");
-  const title = localStorage.getItem("title");
-  const price = localStorage.getItem("price");
+  try {
+    const imageSrc = localStorage.getItem("imageSrc");
+    const brandName = localStorage.getItem("brandName");
+    const title = localStorage.getItem("title");
+    const price = localStorage.getItem("price");
 
-  if (imageSrc) {
-    document.querySelector('img').src = imageSrc;
-  } else {
-    // Handle scenario where imageSrc is not available (e.g., display a placeholder)
-    console.warn("Image source not found in localStorage.");
+    if (imageSrc) {
+      document.querySelector('img').src = imageSrc;
+    } else {
+      console.warn("Image source not found in localStorage.");
+      // Set a default placeholder image here (optional)
+    }
+
+    if (brandName) {
+      document.querySelector('h1').textContent = brandName;
+    } else {
+      console.warn("Brand name not found in localStorage.");
+      // Display a message here (optional)
+    }
+
+    if (title) {
+      document.querySelector('h2').textContent = title;
+    } else {
+      console.warn("Title not found in localStorage.");
+      // Display a message here (optional)
+    }
+
+    if (price) {
+      try {
+        const parsedPrice = parseFloat(price);
+        document.querySelector('p').textContent = `Price: ${parsedPrice}`;
+      } catch (error) {
+        console.error("Error parsing price from localStorage:", error);
+        document.querySelector('p').textContent = "Price unavailable"; // Or handle differently
+      }
+    } else {
+      console.warn("Price not found in localStorage, using default value.");
+      document.querySelector('p').textContent = "Price unavailable"; // Or handle differently
+    }
+  } catch (error) {
+    console.error("Error accessing localStorage:", error);
+    // Handle general localStorage access error here (optional)
   }
-
-  if (brandName) {
-    document.querySelector('h1').textContent = brandName;
-  } else {
-    // Handle scenario where brandName is not available (e.g., display a message)
-    console.warn("Brand name not found in localStorage.");
-  }
-
-  if (title) {
-    document.querySelector('h2').textContent = title;
-  } else {
-    // Handle scenario where title is not available (e.g., display a message)
-    console.warn("Title not found in localStorage.");
-  }
-
-  if (price) {
-    document.querySelector('p').textContent = `Price: ${price}`;
-  } else {
-    // Handle scenario where price is not available (e.g., display a message)
-    console.warn("Price not found in localStorage.");
-  }
-
-  // You can add size selection functionality here (optional)
-  // ...
-};
+}
 
 const redirectButton = document.getElementById('myButton');
 
@@ -63,5 +62,5 @@ redirectButton.addEventListener('click', function() {
     price = 0; // Or handle missing price differently
   }
 
-  window.location.href = `https://localhost:3002/pay?amount=1`;
+  window.location.href = `http://localhost:3002/pay?amount=${price}`;
 });
