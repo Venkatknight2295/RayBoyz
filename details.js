@@ -27,40 +27,41 @@ window.onload = function() {
     }
 
     if (price) {
-      try {
-        const parsedPrice = parseFloat(price);
-        document.querySelector('p').textContent = `Price: ${parsedPrice}`;
-      } catch (error) {
-        console.error("Error parsing price from localStorage:", error);
-        document.querySelector('p').textContent = "Price unavailable"; // Or handle differently
-      }
+      document.querySelector('p').textContent = price;
     } else {
-      console.warn("Price not found in localStorage, using default value.");
-      document.querySelector('p').textContent = "Price unavailable"; // Or handle differently
+      console.warn("Title not found in localStorage.");
+      // Display a message here (optional)
     }
-  } catch (error) {
-    console.error("Error accessing localStorage:", error);
-    // Handle general localStorage access error here (optional)
   }
-}
-
+  catch (error) {
+    console.error("Error loading product details:", error);
+    // Handle error (e.g., display error message)
+  }
+};
 const redirectButton = document.getElementById('myButton');
 
 redirectButton.addEventListener('click', function() {
   const priceFromStorage = localStorage.getItem("price");
-  let price;
+
+  // Debugging: Log the value retrieved from localStorage
+  console.log("Price from localStorage:", priceFromStorage);
 
   if (priceFromStorage) {
-    try {
-      price = parseFloat(priceFromStorage); // Ensure valid number
-    } catch (error) {
-      console.error("Error parsing price from localStorage:", error);
-      price = 0; // Or handle error differently (e.g., display error message)
+    // If the value is not null or undefined
+    const parsedPrice = parseFloat(priceFromStorage);
+
+    // Check if parsedPrice is a valid number
+    if (!isNaN(parsedPrice)) {
+      // If it's a valid number, use it in the URL
+      window.location.href = `http://localhost:3002/pay?amount=${parsedPrice}`;
+    } else {
+      // If it's not a valid number, handle the error
+      console.error("Invalid price value stored in localStorage.");
+      // Add appropriate error handling logic here
     }
   } else {
-    console.warn("Price not found in localStorage, using default value.");
-    price = 0; // Or handle missing price differently
+    console.warn("Price not found in localStorage.");
+    // Handle the situation where the price is not found in localStorage
   }
-
-  window.location.href = `http://localhost:3002/pay?amount=${price}`;
 });
+
