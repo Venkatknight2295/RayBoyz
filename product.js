@@ -66,3 +66,4 @@ function redirectToProductDetails(clickedProduct) {
 
   window.location.href = "details.html";
 }
+
