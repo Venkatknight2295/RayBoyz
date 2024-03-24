@@ -13,7 +13,7 @@
   "main": "about.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node about.js"
+    "start": " about.js"
   },
   "author": "",
   "license": "ISC",
