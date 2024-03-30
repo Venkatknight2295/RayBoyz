@@ -53,7 +53,7 @@ redirectButton.addEventListener('click', function() {
     // Check if parsedPrice is a valid number
     if (!isNaN(parsedPrice)) {
       // If it's a valid number, use it in the URL
-      window.location.href = `http://localhost:3002/pay?amount=${parsedPrice}`;
+      window.location.href = `https://finalbackend-84xa.onrender.com/pay?amount=${parsedPrice}`;
     } else {
       // If it's not a valid number, handle the error
       console.error("Invalid price value stored in localStorage.");
