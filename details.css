@@ -95,6 +95,39 @@ html,body{
     border-radius: 50%;
     transition: 0.3s ease;
 }
+#quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-left: 5vw;
+    margin-top: 2vw;
+}
+
+#quantity-controls button {
+    background-color: #695DFF;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 17px;
+    font-size: 16px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+#quantity-controls button:hover {
+    background-color: #514fac;
+}
+
+#itemQuantity {
+    width: 90px;
+    padding: 8px;
+    border: 1px solid #695DFF;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
 .img-container{
 padding: 20px 20px;
 }
